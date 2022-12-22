@@ -41,6 +41,28 @@ h1 {
     border: 5px solid #FFF;
 }
 
+.pencil{
+    display: flex;
+
+}
+.small, .medium, .large{
+    width: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.small_icon{
+    width: 10px;
+    background-color: #000;
+}
+.medium_icon{
+    width: 20px;
+    background-color: #000;
+}
+.large_icon{
+    width: 30px;
+    background-color: #000;
+}
 .clear {
     border: 1px solid #000;
     background-color: rgba(0, 0, 0, 0.2);
