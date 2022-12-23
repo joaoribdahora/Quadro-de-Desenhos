@@ -5,6 +5,7 @@ let context = canva.getContext('2d');
 let draw = false;
 let mouseX = 0;
 let mouseY = 0;
+let currentPencil = 5;
 
 
 //Elements and Events
@@ -21,6 +22,11 @@ canva.addEventListener('mouseup', mouseUpClick);
 
 //Limpar o quadro
 document.querySelector('.clear').addEventListener('click', clearAll);
+
+//Evento para selecionar o tamanho do pincel 
+document.querySelectorAll('.pencil .box').forEach( item => {
+    item.addEventListener('click', changePencil);
+})
 
 
 //Functions
@@ -53,7 +59,7 @@ function canDraw(x, y){
     let pointY = y - canva.offsetTop;
 
     context.beginPath();
-    context.lineWidth = 5;
+    context.lineWidth = currentPencil;
     context.lineJoin = 'round';
     context.moveTo(mouseX, mouseY);
     context.lineTo(pointX, pointY);
@@ -68,4 +74,18 @@ function canDraw(x, y){
 function clearAll(){
     context.setTransform(1, 0, 0, 1, 0, 0);
     context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+}
+
+function changePencil(e){
+    let pSize = e.target.getAttribute('data-size');
+
+    if(pSize === 'small'){
+        currentPencil = 5;
+    } else if( pSize === 'medium'){
+        currentPencil = 10;
+    } else if( pSize === 'large'){
+        currentPencil = 15;
+    };
+    document.querySelector('.box.activeP').classList.remove('activeP');
+    e.target.classList.add('activeP');
 }
