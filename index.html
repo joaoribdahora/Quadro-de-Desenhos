@@ -10,8 +10,18 @@
 <body>
     <h1>Quadro de Desenhos</h1>
 
-    <canvas id="tela" width="800" height="400"></canvas>
+    <div class="area1">
+        <canvas id="tela" width="800" height="400"></canvas>
 
+        <div class="pencil">
+            <div data-size="small" class="box s activeP">
+            </div>
+            <div data-size="medium" class="box m">
+            </div>
+            <div data-size="large" class="box l">
+            </div>
+        </div>
+    </div>
     <div class="colorArea">
         <div data-color="black" style="background-color: black" class="color active"></div>
         <div data-color="gray" style="background-color: gray" class="color"></div>
@@ -24,18 +34,6 @@
         <div data-color="pink" style="background-color: pink" class="color"></div>
         <div data-color="orangered" style="background-color: orangered" class="color"></div>
         <div data-color="purple" style="background-color: purple" class="color"></div>
-    </div>
-
-    <div class="pencil">
-        <div data-size="small" class="box activeP">
-            <div class="small_icon"></div>
-        </div>
-        <div data-size="medium" class="box">
-            <div class="medium_icon"></div>
-        </div>
-        <div data-size="large" class="box">
-            <div class="large_icon"></div>
-        </div>
     </div>
 
     <button class="clear">Limpar</button>
